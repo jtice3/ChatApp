@@ -1,0 +1,24 @@
+Here are some of the hints that Brad gave us. Let me (Jesse) know if you don't understand anything.
+
+Have a shared object server side. You don’t need a db.
+Treat Canvas as one dimensional line/array. 10 X 10 is pretty much a line of 100 cells (1 row). When you draw it is when it needs to be 2d. 
+
+Expand the game board into a ghost border, just make the outer border invisible. That way you don’t have to worry about edge or corner cases. When checking if alive or dead, don’t check the invisible border.
+
+How to send object from server? Take array as JSON. Use JSON library to parse. JSON is useful for sending between 2 languages. Server packages as JSON and client will unpack. 
+From client you send clicks to server.
+From server send whole game board. 
+
+Draw game board in DOM. Don’t use 400 separate elements. Easier way is HTTP Canvas. There’s a way to draw a graphic. Treat it as one canvas. You can draw lines wherever you want. Whenever someone clicks you’re able to use location to see which cell is clicked. You don’t have to think of 400 separate elements, it is one Canvas and use x/y position to find cell.
+RGB: 
+0 0 255
+0 0 255
+0 255 0
+Divide by 3 if touching 3 colored cells. 
+
+Server will have to store: am I alive, what is my color.
+
+Don’t try to update cells in the same array? Treat old array as a snapshot. 
+
+
+
